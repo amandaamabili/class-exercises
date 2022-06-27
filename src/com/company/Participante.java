@@ -4,18 +4,10 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 
-public class Participante {
-   private  String rg;
-    private String nome;
-   private  String sobrenome;
-    private int idade;
-   private  String numeroCelular;
-   private String numeroEmergencia;
-    private String grupoSanguineo;
-   private String inscricao;
+public class Participante extends Pessoa{
 
     public Participante(String rg, String nome, String sobrenome, int idade, String numeroCelular, String numeroEmergencia, String grupoSanguineo, String inscricao) {
-    this.rg = rg;
+    this.rg = rg ;
     this.nome = nome;
     this.sobrenome = sobrenome;
     this.idade = idade;
@@ -27,6 +19,10 @@ public class Participante {
     }
 
 
+    @Override
+    public boolean verificarMaiorIdade() {
+        return false;
+    }
 
     void verificarInscricao(){
         try {
@@ -84,69 +80,5 @@ public class Participante {
     @Override
     public String toString() {
         return this.nome + " + " + this.inscricao;
-    }
-
-    public String getRg() {
-        return rg;
-    }
-
-    public void setRg(String rg) {
-        this.rg = rg;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getSobrenome() {
-        return sobrenome;
-    }
-
-    public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
-    }
-
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
-
-    public String getNumeroCelular() {
-        return numeroCelular;
-    }
-
-    public void setNumeroCelular(String numeroCelular) {
-        this.numeroCelular = numeroCelular;
-    }
-
-    public String getNumeroEmergencia() {
-        return numeroEmergencia;
-    }
-
-    public void setNumeroEmergencia(String numeroEmergencia) {
-        this.numeroEmergencia = numeroEmergencia;
-    }
-
-    public String getGrupoSanguineo() {
-        return grupoSanguineo;
-    }
-
-    public void setGrupoSanguineo(String grupoSanguineo) {
-        this.grupoSanguineo = grupoSanguineo;
-    }
-
-    public String getInscricao() {
-        return inscricao;
-    }
-
-    public void setInscricao(String inscricao) {
-        this.inscricao = inscricao;
     }
 }
