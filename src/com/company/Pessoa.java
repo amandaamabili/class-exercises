@@ -5,10 +5,7 @@ abstract class Pessoa {
     public String nome;
     public String sobrenome;
     public int idade;
-    public String numeroCelular;
-    public String numeroEmergencia;
     public String grupoSanguineo;
-    public String inscricao;
 
 
     public abstract boolean verificarMaiorIdade(int idade);
@@ -44,23 +41,6 @@ abstract class Pessoa {
     public void setIdade(int idade) {
         this.idade = idade;
     }
-
-    public String getNumeroCelular() {
-        return numeroCelular;
-    }
-
-    public void setNumeroCelular(String numeroCelular) {
-        this.numeroCelular = numeroCelular;
-    }
-
-    public String getNumeroEmergencia() {
-        return numeroEmergencia;
-    }
-
-    public void setNumeroEmergencia(String numeroEmergencia) {
-        this.numeroEmergencia = numeroEmergencia;
-    }
-
     public String getGrupoSanguineo() {
         return grupoSanguineo;
     }
@@ -69,12 +49,6 @@ abstract class Pessoa {
         this.grupoSanguineo = grupoSanguineo;
     }
 
-    public String getInscricao() {
-        return inscricao;
-    }
 
-    public void setInscricao(String inscricao) {
-        this.inscricao = inscricao;
-    }
 
 }
