@@ -11,7 +11,7 @@ public class Main {
 
 
         Participante p1= new Participante("5.863.817", "Amanda Amabili", "Beirao Honorio", 27,"48998316108", "48998316109", "O+", "circuito_pequeno");
-        Participante p2= new Participante("5.863.817", "Rossini", "Beirao Honorio", 27,"48998316108", "48998316109", "O+", "circuito_pequeno");
+        Participante p2= new Participante("5.863.817", "Rossini", "Beirao Honorio", 27,"48998316108", "48998316109", "O+", "circuito_avancado");
 
         participantsTotals.add(p1);
         participantsTotals.add(p2);

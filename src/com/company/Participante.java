@@ -27,55 +27,75 @@ public class Participante extends Pessoa{
     void verificarInscricao(){
         try {
             System.out.println("Ola " + nome + sobrenome + " !!");
-            this.verificarCircuito(inscricao, idade);
-            }catch (InputMismatchException ex){
-            System.out.println(ex.getMessage() );
+            this.verificarCircuito(inscricao, idade, nome);
+            } catch (InputMismatchException e){
+            System.out.println(e.getMessage() );
         }
 
     }
 
-    void verificarCircuito(String inscricao, int idade){
-        if (inscricao.equals("circuito_pequeno") ) {
-            this.pagamentoCircuitoPequeno(idade);
+    void verificarCircuito(String inscricao, int idade, String nome){
+        try{
+            if (inscricao.equals("circuito_pequeno") ) {
+                this.pagamentoCircuitoPequeno(idade);
+            }
+            if (inscricao.equals("circuito_medio")) {
+                this.pagamentoCircuitoMedio(idade);
+            }
+            if (inscricao.equals("circuito_avancado")) {
+                this.pagamentoCircuitoAvancado(idade,nome );
+            }
+        }catch (Exception e){
+            System.out.println(e.getMessage() );
+
         }
-        if (inscricao.equals("circuito_medio")) {
-            this.pagamentoCircuitoMedio(idade);
-        }
-        if (inscricao.equals("circuito_avancado")) {
-            this.pagamentoCircuitoAvancado(idade);
-        }
+
 
 }
 
     void pagamentoCircuitoPequeno(int idade){
-        boolean verifyMaiority = this.verificarMaiorIdade(idade);
-        if (verifyMaiority){
-            System.out.println("voce vai pagar R$1.500.");
-        }else {
-            System.out.println("Voce vai pagar R$1.300.");
+        try{
+            boolean verifyMaiority = this.verificarMaiorIdade(idade);
+            if (verifyMaiority){
+                System.out.println("voce vai pagar R$1.500.");
+            }else {
+                System.out.println("Voce vai pagar R$1.300.");
+            }
+        }catch (Exception e) {
+            System.out.println(e.getMessage() );
         }
+
     }
 
     void pagamentoCircuitoMedio(int idade){
-        boolean verifyMaiority = this.verificarMaiorIdade(idade);
+        try{
+            boolean verifyMaiority = this.verificarMaiorIdade(idade);
 
-        if (verifyMaiority){
-            System.out.println("voce vai pagar R$2.300.");
-        }else {
-            System.out.println("Voce vai pagar R$2.000");
+            if (verifyMaiority){
+                System.out.println("voce vai pagar R$2.300.");
+            }else {
+                System.out.println("Voce vai pagar R$2.000");
+            }
+        }catch (Exception e) {
+            System.out.println(e.getMessage() );
         }
+
     }
 
-    void pagamentoCircuitoAvancado(int idade){
-        boolean verifyMaiority = this.verificarMaiorIdade(idade);
+    void pagamentoCircuitoAvancado(int idade,  String nome) throws Error {
+        try {
+            boolean verifyMaiority = this.verificarMaiorIdade(idade);
 
-        if (verifyMaiority){
-            System.out.println("voce vai pagar R$2.800.");
+            if (verifyMaiority){
+                System.out.println("voce vai pagar R$2.800.");
 
-        }else {
-            System.out.println("Voce nao tem permissao para participar nesse circuito");
-
+            }else {
+                throw new Error( nome + " Por ser menor de idade não tem autorizacao para participar nessa categoria");
+            }
+        }catch (Exception e){
+            System.out.println(e.getMessage() );
         }
+
     }
 
     @Override
