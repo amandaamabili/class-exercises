@@ -1,6 +1,6 @@
 package com.company;
 
-public abstract class Participante extends Pessoa implements  Inscricao {
+public  class Participante extends Pessoa implements  Inscricao {
 
     public String numeroCelular;
     public String numeroEmergencia;
@@ -19,7 +19,6 @@ public abstract class Participante extends Pessoa implements  Inscricao {
     this.inscricao = inscricao;
 
     }
-
 
 
     @Override
@@ -49,5 +48,15 @@ public abstract class Participante extends Pessoa implements  Inscricao {
 
     public void setInscricao(String inscricao) {
         this.inscricao = inscricao;
+    }
+
+    @Override
+    public void realizarInscricao() {
+
+    }
+
+    @Override
+    public boolean verificarMaiorIdade(int idade) {
+        return false;
     }
 }

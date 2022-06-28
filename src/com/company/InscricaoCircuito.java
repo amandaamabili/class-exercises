@@ -4,42 +4,16 @@ import java.util.InputMismatchException;
 import java.util.List;
 
 public class InscricaoCircuito  implements CategoriaCircuito, Inscricao  {
-
-    public String rg;
-    public String nome;
-    public String sobrenome;
-    public int idade;
-    public String grupoSanguineo;
-    public String numeroCelular;
-    public String numeroEmergencia;
-    public String inscricao;
-
+    private Participante participante;
     private List<Participante> ppList = List.of();
     private List<Participante> pmList = List.of();
     private List<Participante> pgList = List.of();
 
-    public InscricaoCircuito(String rg, String nome, String sobrenome, int idade,
-                             String numeroCelular, String numeroEmergencia,
-                             String grupoSanguineo, String inscricao) {
-//        this.rg = participante.rg ;
-//        this.nome = participante.nome;
-//        this.sobrenome = participante.sobrenome;
-//        this.idade = participante.idade;
-//        this.numeroCelular = participante.numeroCelular;
-//        this.numeroEmergencia = participante.numeroEmergencia;
-//        this.grupoSanguineo = participante.grupoSanguineo;
-//        this.inscricao = participante.inscricao;
-        this.rg = rg ;
-        this.nome = nome;
-        this.sobrenome = sobrenome;
-        this.idade = idade;
-        this.numeroCelular = numeroCelular;
-        this.numeroEmergencia = numeroEmergencia;
-        this.grupoSanguineo = grupoSanguineo;
-        this.inscricao = inscricao;
 
+    public InscricaoCircuito(Participante participante) {
+        this.participante = participante;
+        System.out.println(participante.inscricao );
     }
-
 
 
     public void realizarInscricao(Participante participante){
@@ -53,9 +27,10 @@ public class InscricaoCircuito  implements CategoriaCircuito, Inscricao  {
     }
 
     public void realizarInscricao(){
+
         try {
-            System.out.println("Ola " + nome + sobrenome + " !!");
-            this.verificarCircuito(inscricao, idade, nome);
+            System.out.println("Ola " + participante.nome + participante.sobrenome + " !!");
+            this.verificarCircuito(participante.inscricao, participante.idade, participante.nome);
         } catch (InputMismatchException e){
             System.out.println(e.getMessage() );
         }
