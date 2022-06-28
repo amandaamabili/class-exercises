@@ -9,9 +9,10 @@ public class Main {
         ArrayList<Participante> participantsTotals = new ArrayList<>();
 
 
-        InscricaoCircuito p1= new InscricaoCircuito("5.863.817", "Amanda Amabili", "Beirao Honorio", 27,"48998316108", "48998316109", "O+", "circuito_pequeno");
-        InscricaoCircuito p2= new InscricaoCircuito("5.863.817", "Rossini", "Beirao Honorio", 27,"48998316108", "48998316109", "O+", "circuito_avancado");
+        Participante p1= new Participante( "5.863.817", "Amanda Amabili", "Beirao Honorio", 27,"48998316108", "48998316109", "O+", "circuito_pequeno");
+        Participante p2= new Participante("5.863.817", "Rossini", "Beirao Honorio", 27,"48998316108", "48998316109", "O+", "circuito_avancado");
 
+        InscricaoCircuito in = new InscricaoCircuito(p1);
 //        participantsTotals.add(p1);
 //        participantsTotals.add(p2);
 
@@ -20,7 +21,7 @@ public class Main {
                .collect(Collectors.toList())
                .forEach(System.out::println);
 
-        p1.realizarInscricao();
+       in.realizarInscricao();
         p2.realizarInscricao();
 
 
