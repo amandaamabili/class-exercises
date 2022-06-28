@@ -20,8 +20,8 @@ public class Participante extends Pessoa{
 
 
     @Override
-    public boolean verificarMaiorIdade() {
-        return false;
+    public boolean verificarMaiorIdade(int idade) {
+        return idade > 18;
     }
 
     void verificarInscricao(){
@@ -48,33 +48,34 @@ public class Participante extends Pessoa{
 }
 
     void pagamentoCircuitoPequeno(int idade){
-        ArrayList<Object> participantes2Km = new ArrayList<>();
-        participantes2Km.add(nome);
-        if (idade < 18){
+        boolean verifyMaiority = this.verificarMaiorIdade(idade);
+        if (verifyMaiority){
+            System.out.println("voce vai pagar R$1.500.");
+        }else {
             System.out.println("Voce vai pagar R$1.300.");
         }
-            System.out.println("voce vai pagar R$1.500.");
-        System.out.println("lista" + participantes2Km);
-
     }
 
     void pagamentoCircuitoMedio(int idade){
-        if (idade < 18){
+        boolean verifyMaiority = this.verificarMaiorIdade(idade);
+
+        if (verifyMaiority){
+            System.out.println("voce vai pagar R$2.300.");
+        }else {
             System.out.println("Voce vai pagar R$2.000");
         }
-            System.out.println("voce vai pagar R$2.300.");
     }
 
     void pagamentoCircuitoAvancado(int idade){
-        if (idade < 18){
-            System.out.println("Voce nao tem permissao para participar nesse circuito");
-        }
+        boolean verifyMaiority = this.verificarMaiorIdade(idade);
+
+        if (verifyMaiority){
             System.out.println("voce vai pagar R$2.800.");
-    }
 
+        }else {
+            System.out.println("Voce nao tem permissao para participar nesse circuito");
 
-    void addParticipantInList(){
-
+        }
     }
 
     @Override

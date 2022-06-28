@@ -11,7 +11,7 @@ abstract class Pessoa {
     public String inscricao;
 
 
-    public abstract boolean verificarMaiorIdade();
+    public abstract boolean verificarMaiorIdade(int idade);
 
     public String getRg() {
         return rg;
