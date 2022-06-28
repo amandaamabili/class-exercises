@@ -1,16 +1,14 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.List;
-
-public abstract class Participante extends Pessoa implements CategoriaCircuito, Inscricao {
+public abstract class Participante extends Pessoa implements  Inscricao {
 
     public String numeroCelular;
     public String numeroEmergencia;
     public String inscricao;
 
-    public Participante(String rg, String nome, String sobrenome, int idade, String numeroCelular, String numeroEmergencia, String grupoSanguineo, String inscricao) {
+    public Participante(String rg, String nome, String sobrenome, int idade,
+                        String numeroCelular, String numeroEmergencia,
+                        String grupoSanguineo, String inscricao) {
     this.rg = rg ;
     this.nome = nome;
     this.sobrenome = sobrenome;

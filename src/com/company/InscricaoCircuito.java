@@ -1,20 +1,58 @@
 package com.company;
 
 import java.util.InputMismatchException;
+import java.util.List;
 
-public class InscricaoCircuito extends Participante  implements CategoriaCircuito, Inscricao  {
+public class InscricaoCircuito  implements CategoriaCircuito, Inscricao  {
 
-    public InscricaoCircuito(String rg, String nome, String sobrenome, int idade, String numeroCelular, String numeroEmergencia, String grupoSanguineo, String inscricao) {
-        super(rg, nome, sobrenome, idade, numeroCelular, numeroEmergencia, grupoSanguineo, inscricao);
+    public String rg;
+    public String nome;
+    public String sobrenome;
+    public int idade;
+    public String grupoSanguineo;
+    public String numeroCelular;
+    public String numeroEmergencia;
+    public String inscricao;
+
+    private List<Participante> ppList = List.of();
+    private List<Participante> pmList = List.of();
+    private List<Participante> pgList = List.of();
+
+    public InscricaoCircuito(String rg, String nome, String sobrenome, int idade,
+                             String numeroCelular, String numeroEmergencia,
+                             String grupoSanguineo, String inscricao) {
+//        this.rg = participante.rg ;
+//        this.nome = participante.nome;
+//        this.sobrenome = participante.sobrenome;
+//        this.idade = participante.idade;
+//        this.numeroCelular = participante.numeroCelular;
+//        this.numeroEmergencia = participante.numeroEmergencia;
+//        this.grupoSanguineo = participante.grupoSanguineo;
+//        this.inscricao = participante.inscricao;
+        this.rg = rg ;
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.idade = idade;
+        this.numeroCelular = numeroCelular;
+        this.numeroEmergencia = numeroEmergencia;
+        this.grupoSanguineo = grupoSanguineo;
+        this.inscricao = inscricao;
+
     }
 
 
-    @Override
+
+    public void realizarInscricao(Participante participante){
+        //validar qual o tipo de inscrição
+        ppList.add(participante);
+
+    }
+
     public boolean verificarMaiorIdade(int idade) {
         return idade > maioridade;
     }
 
-    public void verificarInscricao(){
+    public void realizarInscricao(){
         try {
             System.out.println("Ola " + nome + sobrenome + " !!");
             this.verificarCircuito(inscricao, idade, nome);
