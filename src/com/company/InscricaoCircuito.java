@@ -3,7 +3,7 @@ package com.company;
 import java.util.*;
 
 public class InscricaoCircuito  implements CategoriaCircuito, Inscricao  {
-//    private Participante participante;
+
     private  List<Participante> ppList = new ArrayList<Participante>();
     private List<Participante> pmList = new ArrayList<Participante>();
     private List<Participante> pgList = new ArrayList<Participante>();
@@ -30,15 +30,15 @@ public class InscricaoCircuito  implements CategoriaCircuito, Inscricao  {
 
     public void verificarCircuito(String inscricao, int idade, String nome, Participante participante){
         try{
-            if (inscricao.equals("circuito_pequeno") ) {
+            if (inscricao.equals(CategoriaCircuitoEnum.CIRCUITO_PEQUENO.toString()) ) {
                 this.pagamentoCircuitoPequeno(idade, participante);
                 return;
             }
-            if (inscricao.equals("circuito_medio")) {
+            if (inscricao.equals(CategoriaCircuitoEnum.CIRCUITO_MEDIO.toString())) {
                 this.pagamentoCircuitoMedio(idade, participante);
                 return;
             }
-            if (inscricao.equals("circuito_avancado")) {
+            if (inscricao.equals(CategoriaCircuitoEnum.CIRCUITO_AVANCADO.toString())) {
                 this.pagamentoCircuitoAvancado(idade,nome, participante );
                 return;
             }
@@ -55,7 +55,7 @@ public class InscricaoCircuito  implements CategoriaCircuito, Inscricao  {
     public void pagamentoCircuitoPequeno(int idade, Participante participante){
         try{
             boolean verifyMaiority = this.verificarMaiorIdade(idade);
-        ppList.add(participante);
+         ppList.add(participante);
 
         if (verifyMaiority){
                 System.out.println("voce vai pagar R$1.500.");
@@ -108,7 +108,6 @@ public class InscricaoCircuito  implements CategoriaCircuito, Inscricao  {
 
     }
 
-    @Override
     public void realizarInscricao() {
 
     }
