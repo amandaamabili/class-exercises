@@ -21,6 +21,8 @@ public class Main {
 //               .collect(Collectors.toList())
 //               .forEach(System.out::println);
 
+
+
         inscricaop1.realizarInscricao(p1);
         inscricaop2.realizarInscricao(p2);
 

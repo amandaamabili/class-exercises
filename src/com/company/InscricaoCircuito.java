@@ -19,9 +19,8 @@ public class InscricaoCircuito  implements CategoriaCircuito, Inscricao  {
     public void realizarInscricao(Participante participante){
         try {
             System.out.println("Ola " + participante.nome + participante.sobrenome + " !!");
-            System.out.println(participante);
-
             this.verificarCircuito(participante.inscricao, participante.idade, participante.nome, participante);
+
              } catch (InputMismatchException e){
             System.out.println(e.getMessage() );
         }
@@ -55,18 +54,15 @@ public class InscricaoCircuito  implements CategoriaCircuito, Inscricao  {
     public void pagamentoCircuitoPequeno(int idade, Participante participante){
         try{
             boolean verifyMaiority = this.verificarMaiorIdade(idade);
-         ppList.add(participante);
+            ppList.add(participante);
+            System.out.println(ppList);
 
-        if (verifyMaiority){
+            if (verifyMaiority){
                 System.out.println("voce vai pagar R$1.500.");
             }else {
 
                 System.out.println("Voce vai pagar R$1.300.");
             }
-
-        System.out.println(ppList.size());
-
-
         }catch (Exception e) {
             System.out.println(e.getMessage() );
         }
@@ -77,6 +73,7 @@ public class InscricaoCircuito  implements CategoriaCircuito, Inscricao  {
         try{
             boolean verifyMaiority = this.verificarMaiorIdade(idade);
             pmList.add(participante);
+            System.out.println(pmList);
 
             if (verifyMaiority){
                 System.out.println("voce vai pagar R$2.300.");
@@ -94,6 +91,7 @@ public class InscricaoCircuito  implements CategoriaCircuito, Inscricao  {
         try {
             boolean verifyMaiority = this.verificarMaiorIdade(idade);
             pgList.add(participante);
+            System.out.println(pgList);
 
             if (verifyMaiority){
                 System.out.println("voce vai pagar R$2.800.");
