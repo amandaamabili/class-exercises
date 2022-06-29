@@ -22,7 +22,7 @@ public class Main {
 //               .forEach(System.out::println);
 
         inscricaop1.realizarInscricao(p1);
-//        inscricaop2.realizarInscricao(p2);
+        inscricaop2.realizarInscricao(p2);
 
 
     }
